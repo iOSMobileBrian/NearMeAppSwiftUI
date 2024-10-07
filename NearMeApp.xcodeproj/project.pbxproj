@@ -11,6 +11,10 @@
 		75E71D512CB1929200C6286E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E71D502CB1929200C6286E /* ContentView.swift */; };
 		75E71D532CB1929500C6286E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E71D522CB1929500C6286E /* Assets.xcassets */; };
 		75E71D562CB1929500C6286E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E71D552CB1929500C6286E /* Preview Assets.xcassets */; };
+		75E71D5E2CB192C100C6286E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E71D5D2CB192C100C6286E /* MapView.swift */; };
+		75E71D622CB2332700C6286E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E71D612CB2332700C6286E /* LocationManager.swift */; };
+		75E71D642CB233EA00C6286E /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E71D632CB233EA00C6286E /* CLLocationCoordinate2D+Extension.swift */; };
+		75E71D662CB2EC2C00C6286E /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E71D652CB2EC2B00C6286E /* MKCoordinateRegion+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		75E71D502CB1929200C6286E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		75E71D522CB1929500C6286E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75E71D552CB1929500C6286E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		75E71D5D2CB192C100C6286E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		75E71D612CB2332700C6286E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		75E71D632CB233EA00C6286E /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
+		75E71D652CB2EC2B00C6286E /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,9 @@
 		75E71D4D2CB1929200C6286E /* NearMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				75E71D602CB2316B00C6286E /* Extensions */,
+				75E71D5F2CB2315F00C6286E /* Managers */,
+				75E71D5C2CB192A800C6286E /* Views */,
 				75E71D4E2CB1929200C6286E /* NearMeAppApp.swift */,
 				75E71D502CB1929200C6286E /* ContentView.swift */,
 				75E71D522CB1929500C6286E /* Assets.xcassets */,
@@ -65,6 +76,31 @@
 				75E71D552CB1929500C6286E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		75E71D5C2CB192A800C6286E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75E71D5D2CB192C100C6286E /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75E71D5F2CB2315F00C6286E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				75E71D612CB2332700C6286E /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		75E71D602CB2316B00C6286E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				75E71D632CB233EA00C6286E /* CLLocationCoordinate2D+Extension.swift */,
+				75E71D652CB2EC2B00C6286E /* MKCoordinateRegion+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E71D622CB2332700C6286E /* LocationManager.swift in Sources */,
+				75E71D662CB2EC2C00C6286E /* MKCoordinateRegion+Extensions.swift in Sources */,
 				75E71D512CB1929200C6286E /* ContentView.swift in Sources */,
+				75E71D642CB233EA00C6286E /* CLLocationCoordinate2D+Extension.swift in Sources */,
+				75E71D5E2CB192C100C6286E /* MapView.swift in Sources */,
 				75E71D4F2CB1929200C6286E /* NearMeAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +315,7 @@
 				DEVELOPMENT_TEAM = F33K9P37S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "need your location to search";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +345,7 @@
 				DEVELOPMENT_TEAM = F33K9P37S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "need your location to search";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
