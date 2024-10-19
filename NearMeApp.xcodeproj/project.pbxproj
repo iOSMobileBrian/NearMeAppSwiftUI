@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75CE462D2CC3FE9A00CBFADA /* ActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE462C2CC3FE9A00CBFADA /* ActionButtons.swift */; };
 		75E71D4F2CB1929200C6286E /* NearMeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E71D4E2CB1929200C6286E /* NearMeAppApp.swift */; };
 		75E71D512CB1929200C6286E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E71D502CB1929200C6286E /* ContentView.swift */; };
 		75E71D532CB1929500C6286E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E71D522CB1929500C6286E /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75CE462C2CC3FE9A00CBFADA /* ActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtons.swift; sourceTree = "<group>"; };
 		75E71D4B2CB1929200C6286E /* NearMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E71D4E2CB1929200C6286E /* NearMeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeAppApp.swift; sourceTree = "<group>"; };
 		75E71D502CB1929200C6286E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				75F562C12CBA172B00D3A46C /* SearchBarView.swift */,
 				75F562C32CBA191A00D3A46C /* PlaceListView.swift */,
 				75F562C72CBCAFB200D3A46C /* SelectedPlaceDetailView.swift */,
+				75CE462C2CC3FE9A00CBFADA /* ActionButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				75F562BE2CB6B29600D3A46C /* PlaceView.swift in Sources */,
 				75F562C02CB769DC00D3A46C /* SearchOptionsView.swift in Sources */,
 				75F562C42CBA191A00D3A46C /* PlaceListView.swift in Sources */,
+				75CE462D2CC3FE9A00CBFADA /* ActionButtons.swift in Sources */,
 				75F562BC2CB4C28800D3A46C /* MapUtils.swift in Sources */,
 				75E71D512CB1929200C6286E /* ContentView.swift in Sources */,
 				75E71D642CB233EA00C6286E /* CLLocationCoordinate2D+Extension.swift in Sources */,

@@ -50,15 +50,14 @@ struct ContentView: View {
     @State private var lookAroundScene: MKLookAroundScene?
     @State private var route: MKRoute?
     
-    private func requestCalculateDirections(){
+    private func requestCalculateDirections() async{
         route = nil
         if let selectedMapItem {
             guard let currentUserLocation = locationManager.manager.location else {return}
             let startingMapItem = MKMapItem(placemark: MKPlacemark(coordinate: currentUserLocation.coordinate))
             
-            task {
                 self.route = await calculateDirection(from: startingMapItem, to: selectedMapItem)
-            }
+            
         }
     }
    
@@ -86,15 +85,15 @@ struct ContentView: View {
                      PlaceListView(mapItems: mapItems, selectedMapItem: $selectedMapItem)
                 case .detail:
                     SelectedPlaceDetailView(mapItem: $selectedMapItem).padding()
-                    LookAroundPreview(initialScene: lookAroundScene)
-                        .task(id: selectedMapItem) {
-                            lookAroundScene = nil
-                            if let selectedMapItem{
-                                let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
-                                lookAroundScene = try? await request.scene
-                            }
-                            
+                    if selectedDetent == .medium || selectedDetent == .large{
+                        if let selectedMapItem{
+                            ActionButtons(mapItem: selectedMapItem)
                         }
+                        
+                        LookAroundPreview(initialScene: lookAroundScene)
+                    }
+                    
+                        
                 }
                
                 Spacer()
@@ -119,7 +118,17 @@ struct ContentView: View {
               position = .region(visibleRegion!)
                 }
             
-        }.task(id: isSearching) {
+        }.task(id: selectedMapItem) {
+            lookAroundScene = nil
+            if let selectedMapItem{
+                let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
+                lookAroundScene = try? await request.scene
+                await requestCalculateDirections()
+            }
+            
+        }
+        
+        .task(id: isSearching) {
             do{
                 mapItems = try await performSearch(searchTerm: query, visibleRegion: locationManager.region)
                 print(mapItems)

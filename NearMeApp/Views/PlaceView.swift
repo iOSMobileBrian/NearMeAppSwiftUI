@@ -26,7 +26,7 @@ struct PlaceView: View {
     }
     
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             Text(mapItem.name ?? "").font(.title3)
             Text(address).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .leading)
             if let distance {

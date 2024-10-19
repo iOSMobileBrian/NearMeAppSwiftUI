@@ -8,6 +8,20 @@
 import Foundation
 import MapKit
 
+func makeCall(phone: String) {
+    if let url = URL(string: "tel://\(phone)"){
+        if UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.open(url)
+        }else{
+            print("Device can't make phone calls")
+        }
+    }
+}
+
+func openAppleMaps(destination: MKMapItem){
+    MKMapItem.openMaps(with: [destination])
+}
+
 func calculateDistance(from: CLLocation, to: CLLocation)-> Measurement<UnitLength>{
     let distanceInMeters = from.distance(from: to)
     return Measurement(value: distanceInMeters, unit: .meters)
